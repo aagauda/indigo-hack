@@ -1,0 +1,8 @@
+// Next auth steps:
+npm install next-auth 
+
+npx auth secret // this is to generate a .env.local file and with a auth secret
+
+// create a auth.ts file in src folder
+
+// inside the app folder make new file :- api/auth/[...nextauth]/route.ts
