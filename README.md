@@ -5,7 +5,7 @@ This project is a flight status and booking system that allows users to book tic
 
 ## Deployed Links
 
-The code is deployed on the Redhat Openshift.
+The code is deployed on the **Redhat Openshift**.
 
 Frontend: https://indigohack-frontend-aabhashgauda1-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/
 
@@ -28,7 +28,7 @@ Backend: https://indigohack-backend-aabhashgauda1-dev.apps.sandbox-m4.g2pi.p1.op
     - Signin
     - Signup
     - Book tickets
-    - Receive email notifications for flight status changes
+    - Receive email notifications for booked flight status changes
     - View Flight Booked Flight Status
     - Profile update
 
@@ -77,6 +77,17 @@ Environment Variables
 
 ## Admin Login Credentials
 
-## Username: admin@indigo.com
-## Password: admin123
+Please use these credentials to login as a flight admin and update the flight status.
+
+**Username:** admin@indigo.com
+
+**Password:** admin123
+
+## Role Based Access.
+
+Here the user and admin has same login and based on the role the person is identified.
+
+![image](https://github.com/user-attachments/assets/9df8ddfa-883e-4b75-8bf0-d0f3ed926569)
+
+
     
