@@ -5,7 +5,9 @@ This project is a flight status and booking system that allows users to book fli
 
 ## Deployed Links
 
-The code is deployed on the **Redhat Openshift**.
+Both backend and frontend are deployed on the **Redhat Openshift**.
+
+You can visit the application via the below links:-
 
 Frontend: https://indigohack-frontend-aabhashgauda1-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/
 
