@@ -2,6 +2,15 @@
 ## Flight Status and Booking System
 
 This project is a flight status and booking system that allows users to book tickets and receive email notifications about flight status changes. The system also provides an admin interface to update flight statuses and view all flights.
+
+## Deployed Links
+
+The code is deployed on the Redhat Openshift.
+
+Frontend: https://indigohack-frontend-aabhashgauda1-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/
+
+Backend: https://indigohack-backend-aabhashgauda1-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/
+
 ## Tech Stack
 
 **Frontend:** Next.js, TailwindCSS
