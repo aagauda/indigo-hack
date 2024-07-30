@@ -1,5 +1,5 @@
 
-## Flight Status and Booking System
+## Flight Status and Booking System Simulation
 
 This project is a flight status and booking system that allows users to book flights and receive email notifications about flight status changes. The system also provides an admin interface to update flight statuses and view all flights.
 
