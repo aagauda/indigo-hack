@@ -4,6 +4,23 @@ import credentials from "next-auth/providers/credentials";
 import { User } from "./models/userModel";
 import axios from "axios";
 import { baseUrl } from "./util/config";
+// import { AdapterUser, AdapterSession } from 'next-auth/adapters';
+// import { JWT } from 'next-auth/jwt';
+// interface Token {
+//   id?: string;
+//   email?: string;
+//   tempToken?: string;
+// }
+
+// interface SessionUser extends AdapterUser {
+//   id?: string;
+//   email?: string;
+//   tempToken?: string;
+// }
+
+// interface Session extends AdapterSession {
+//   user: SessionUser;
+// }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -66,11 +83,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return token
     },
-    async session({ session, token }) {
+    async session({ session, token }:any) {
       if (token) {
-        session.user.id = token.id;
-        session.user.email = token.email;
-        session.user.tempToken = token.tempToken;
+        session.user.id = token.id as string;
+        session.user.email = token.email as string;
+        session.user.tempToken = token.tempToken as string;
       }
       return session
     },
@@ -78,10 +95,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
   pages: {
     signIn: "/auth/login",
+    signOut: "/auth/signout"
   },
   session: {
     strategy: "jwt"
   },
-  secret: process.env.AUTH_SECRET,
+  secret:"d75siW33X46008XS1ImAnKPFCOrV1nU6MPL04PLDsHE=",
 
 })

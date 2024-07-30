@@ -21,7 +21,7 @@ type Props = {
   DropDownIcon: LucideIcon,
   DropMenuAlignment?: "center" | "end" | "start",
   DropDownLabel?: string,
-  DropDownMenuItems: DropDownMenuItemType[],
+  DropDownMenuItems?: DropDownMenuItemType[],
 }
 
 function DropDown({ DropDownIcon, DropMenuAlignment = "start", DropDownLabel, DropDownMenuItems = [] }: Props) {

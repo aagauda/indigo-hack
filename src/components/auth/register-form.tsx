@@ -17,7 +17,7 @@ import { baseUrl } from "@/util/config";
 // API call function
 const registerUser = async (values: z.infer<typeof RegisterSchema>) => {
   try {
-    values.phone = values.phoneNumber;
+    // values.phone = values.phoneNumber;
     const response = await fetch(`${baseUrl}/auth/signup`, {
       method: "POST",
       headers: {
@@ -108,7 +108,7 @@ export const RegisterForm = () => {
                   />
 
                   <FormField
-                    name="phoneNumber"
+                    name="phone"
                     control={form.control}
                     render={({ field }) => (
                       <FormItem>

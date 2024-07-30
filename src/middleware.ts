@@ -24,29 +24,42 @@ export async function middleware(request: NextRequest) {
 
 
   if (isAuthenticated && isPublic) {
-    if( session.user.email=="admin@indigo.com"){
-      return NextResponse.redirect(new URL("/dashboard/admin/app", request.url));
+    if (session) {
+      if (session.user) {
+        if (session.user.email == "admin@indigo.com") {
+          return NextResponse.redirect(new URL("/admin/app", request.url));
+        }
+      }
     }
+
     return NextResponse.redirect(new URL("/dashboard/app", request.url));
   }
 
   // if the route is not public and we donot have the token then we will send it to the login page
   if (!isPublic && !isAuthenticated) {
-    
+
     return NextResponse.redirect(new URL(publicPaths[0], request.url))
   }
 
   if (currentPath.startsWith("/dashboard")) {
-    if( session.user.email=="admin@indigo.com"){
-      return NextResponse.redirect(new URL("/admin/app", request.url));
+    if (session) {
+      if (session.user) {
+        if (session.user.email == "admin@indigo.com") {
+          return NextResponse.redirect(new URL("/admin/app", request.url));
+        }
+      }
     }
   }
-  
+
 
 
   if (currentPath === "/dashboard") {
-    if( session.user.email=="admin@indigo.com"){
-      return NextResponse.redirect(new URL("/dashboard/admin/app", request.url));
+    if (session) {
+      if (session.user) {
+        if (session.user.email == "admin@indigo.com") {
+          return NextResponse.redirect(new URL("/admin/app", request.url));
+        }
+      }
     }
     return NextResponse.redirect(new URL("/dashboard/app", request.url));
   }
@@ -55,5 +68,5 @@ export async function middleware(request: NextRequest) {
 
 // // our middleware will affect these routes
 export const config = {
-  matcher: ["/", "/auth/(.*)", "/dashboard/(.*)", "/dashboard","/admin/(.*)"]
+  matcher: ["/", "/auth/(.*)", "/dashboard/(.*)", "/dashboard", "/admin/(.*)"]
 }

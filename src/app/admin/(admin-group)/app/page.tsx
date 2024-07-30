@@ -107,8 +107,8 @@ export default function ProfileForm() {
     setErrorMessage("");
 
     try {
-      const token = session.user.tempToken;
-      console.log(token)
+      // const token = session.user.tempToken;
+      // console.log(token)
       const response = await axios.put(`${baseUrl}/flights/${data.flight_id}`, {
         ...data,
         scheduled_departure: data.scheduled_departure?.toISOString(),
@@ -117,7 +117,7 @@ export default function ProfileForm() {
         actual_arrival: data.actual_arrival?.toISOString(),
       }, {
         headers: {
-          Authorization: `Bearer ${token}`
+          // Authorization: `Bearer ${token}`
         },
       });
 

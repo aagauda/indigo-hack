@@ -10,13 +10,37 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import { baseUrl } from "../../../../util/config";
 
+
+
+
+interface FlightDetails {
+  flight_id: string;
+  airline: string;
+  status: string
+  departure_gate: string
+  arrival_gate: string
+  scheduled_departure: string; // Use a more specific type if applicable, e.g., Date
+  scheduled_arrival: string; // Use a more specific type if applicable, e.g., Date
+  actual_departure?: string; // Optional fields
+  actual_arrival?: string; // Optional fields
+}
+
+
+interface Booking {
+  flight: FlightDetails;
+  status: string
+  seat_number?: string;
+  booking_date?: string; // Use a more specific type if applicable, e.g., Date
+}
+
+
 export default function DashboardApp() {
 
   const { data: session, status } = useSession();
   let token = session?.user?.tempToken;
 
   // API states
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState<Booking[]>([]);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10); // Or whatever your default page size is
   const [totalPages, setTotalPages] = useState(0);

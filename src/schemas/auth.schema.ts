@@ -33,6 +33,6 @@ export const RegisterSchema = z.object({
     .max(30, { message: "The names should not exceed 30 characters" }),
 
 
-  phoneNumber: z.string()
+  phone: z.string()
     .regex(/^\d{10}$/, { message: "The phone number should be exactly 10 digits" })
 })

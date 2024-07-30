@@ -40,12 +40,12 @@ export default function ProfileForm() {
   });
 
   useEffect(() => {
-    if (status === "authenticated") {
+    // if (status === "authenticated") {
       async function fetchUserData() {
         try {
           const response = await axios.get(`${baseUrl}/users/`, {
             headers: {
-              Authorization: `Bearer ${session.user.tempToken}`
+              Authorization: `Bearer ${session?.user?.tempToken}`
             }
           });
           const userData = response.data;
@@ -65,7 +65,7 @@ export default function ProfileForm() {
       }
 
       fetchUserData();
-    }
+    // }
   }, [status, session, form]);
 
   async function onSubmit(data: ProfileFormValues) {

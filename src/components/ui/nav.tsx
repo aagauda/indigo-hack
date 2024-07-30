@@ -33,7 +33,8 @@ export function Nav({ links, isCollapsed }: NavProps) {
   const pagePathName = usePathname();
 
   const handleLogout = async () => {
-    await signOut()
+    await signOut({redirect:false});
+    window.location.href = '/';
   }
 
 

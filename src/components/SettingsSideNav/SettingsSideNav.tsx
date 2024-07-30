@@ -19,8 +19,8 @@ export function SettingsSideNav({ className, items, ...props }: SidebarNavProps)
   const pathname = usePathname()
 
   const handleLogout = async () => {
-    console.log("called")
-    await signOut()
+    await signOut({redirect:false});
+    window.location.href = '/';
   }
 
   return (
